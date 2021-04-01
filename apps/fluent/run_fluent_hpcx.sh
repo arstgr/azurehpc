@@ -14,7 +14,8 @@ export FLUENT_HOSTNAME=`hostname`
 export APPLICATION=fluent
 export VERSION=$FLUENT_VERSION
 
-cd $PBS_O_WORKDIR
+mkdir -p $PBS_O_WORKDIR/$PBS_JOBID
+cd $PBS_O_WORKDIR/$PBS_JOBID
 
 CORES=`cat $PBS_NODEFILE | wc -l`
 NODES=`cat $PBS_NODEFILE | sort | uniq | wc -l`
@@ -80,3 +81,4 @@ fluentbench.pl \
 unlink libopen-rte.so.4
 unlink libopen-pal.so.4
 unlink libmpi.so.1
+cp ${MODEL}*.log $PBS_O_WORKDIR/${MODEL}-${FLUENT_VERSION}-${PBS_JOBID}-${NODES}-${PPN}-${CORES}.log
