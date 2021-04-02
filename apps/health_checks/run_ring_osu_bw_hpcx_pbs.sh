@@ -63,6 +63,6 @@ sort -k3 -n $OUTDIR/osu_bibw_report_$$.log > bibw_report.out
 
 cat bw_report.out | head -n100
 cat latency_report.out | tail -n100
-cat allreduce_report.out | tail -n100
+cat bibw_report.out | tail -n100
 cd $dir
 grep -i error osu_bw_test.* | tee osu_error_report.log
