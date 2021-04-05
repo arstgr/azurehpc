@@ -98,7 +98,8 @@ function create_links {
     NETCDF_C=$(spack location -i netcdf-c^${MPI_TYPE})
     echo "NETCDF_C=$NETCDF_C"
     ln -sf $NETCDF_C/include/* $NETCDF/include/
-    ln -sf $NETCDF_C/lib/* $NETCDF/lib/
+#    ln -sf $NETCDF_C/lib/* $NETCDF/lib/
+    ln -sf $(ls -p $NETCDF_C/lib/* | grep / ) $NETCDF/lib/
     ln -sf $NETCDF_C/lib/pkgconfig/* $NETCDF/lib/pkgconfig
 }
 
