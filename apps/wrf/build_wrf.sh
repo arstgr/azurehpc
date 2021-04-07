@@ -116,6 +116,8 @@ $CONFIG_VALUE
 EOF
 }
 
+sudo dnf config-manager --set-enabled PowerTools
+
 install_packages
 get_version
 load_spack
