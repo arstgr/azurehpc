@@ -76,7 +76,7 @@ function get_wrf {
 
 function spack_install {
     echo "spack install"
-    spack install  netcdf-fortran+mpi ^hdf5+fortran %gcc@${GCC_VERSION} ^${MPI_TYPE}@${MPI_VER} || exit 1
+    spack install  netcdf-fortran ^hdf5+fortran %gcc@${GCC_VERSION} ^${MPI_TYPE}@${MPI_VER} || exit 1
 }
 
 function spack_load {
