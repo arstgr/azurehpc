@@ -34,10 +34,10 @@ function get_version {
     GCC_VERSION=9.2.0
     case $MPI_TYPE in
         openmpi)
-            MPI_VER=4.0.3
+            MPI_VER=4.0.5
         ;;
         mvapich2)
-            MPI_VER=2.3.3
+            MPI_VER=2.3.5
         ;;
     esac
     if [ "$OMP" == "" ]; then
